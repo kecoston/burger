@@ -13,6 +13,12 @@ router.get("/", (req,res) => {
 
 })
 
+router.post("/api/burgers", (req,res) => {
+    burger.getABurger(["burger_name", "devoured"],[
+        req.body.name, req.body.devoured],  (err,data) => {
+        res.json({id: data});
+    })
+})
 
 
 

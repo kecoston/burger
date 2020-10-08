@@ -16,7 +16,6 @@ const burgers = {
     }
 }
 
-console.log(burgers)
 
 
 // * Also inside `burger.js`, create the code that will call the ORM 
