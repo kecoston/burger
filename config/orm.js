@@ -27,8 +27,8 @@ var orm = {
         });
     },
 
-    updateOne: (table, objColVals, condition, callBack) => {
-        var queryString = "UPDATE " + table;
+    updateOne: (tableName, objColVals, condition, callBack) => {
+        var queryString = "UPDATE " + tableName;
     
         queryString += " SET ";
         queryString += objColVals;

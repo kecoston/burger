@@ -15,6 +15,12 @@ const burgers = {
         })
     },
 
+    updateABurger: (tableName, objectColVals, condition, callBack) => {
+        orm.updateOne(tableName, objectColVals, condition, (res) => {
+            callBack(res)
+        })
+    }
+
 };
 
 
