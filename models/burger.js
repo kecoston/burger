@@ -9,15 +9,17 @@ const burgers = {
         })
     },
 
-    postABurger: (tableName, column, value, callBack) => {
-        orm.postOne(tableName, column, value, (req, data) => {
-            callBack(req, data)
-        })
+    postABurger: (name, callback) => {
+        orm.postOne("burgers", ["burger_name", "devoured"],
+        [
+        name, false 
+        ], callback); 
+           
     },
 
     updateABurger: (tableName, objectColVals, condition, callBack) => {
         orm.updateOne(tableName, objectColVals, condition, (res) => {
-            callBack(res)
+            callBack(req, res)
         })
     }
 
