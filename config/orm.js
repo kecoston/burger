@@ -2,14 +2,25 @@ var connection = require("../config/connection.js");
 
 
 var orm = {
-    selectAll: function(tableInput, callBack) {
+    selectAll: (tableInput, callBack) => {
         var queryString = "SELECT * FROM ??";
-        connection.query(queryString, [tableInput], function(err, result) {
+        connection.query(queryString, [tableInput], (err, result) => {
             if (err) throw err;
             callBack(err, result)
 
         });
+    },
+
+    postOne: (tableName, column, value, callBack) => {
+        var queryString = "INSERT INTO" + tableName 
+            queryString += ({column})
+            quqeryString += "values (??)";
+        connection.query(queryString, value, (err, result) => {
+            if (err) throw err;
+            callBack(err, result)
+        });
     }
+
 
 };
 

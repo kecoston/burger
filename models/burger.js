@@ -9,6 +9,12 @@ const burgers = {
         })
     },
 
+    postABurger: (tableName, column, value, callBack) => {
+        orm.postOne(tableName, column, value, (result) => {
+            callBack(result)
+        })
+    },
+
 };
 
 

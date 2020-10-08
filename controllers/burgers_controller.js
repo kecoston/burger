@@ -12,6 +12,14 @@ router.get("/", (req,res) => {
     })
 })
 
+router.post("/burgers/create", function(req, res) {
+    burger.postABurger("burgers", req.body.burger_name, function(result) {
+      console.log(result);
+      res.redirect("/");
+    });
+  });
 
+
+router.post("api/burgers")
 
 module.exports = router;
