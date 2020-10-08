@@ -12,9 +12,15 @@ var orm = {
     },
 
     postOne: (tableName, column, value, callBack) => {
-        var queryString = "INSERT INTO" + tableName 
-            queryString += ({column})
-            quqeryString += "values (??)";
+        var queryString = "INSERT INTO " + tableName;
+
+        queryString += " (";
+        queryString += column;
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += (value);
+        queryString += ") ";
+
         connection.query(queryString, value, (err, result) => {
             if (err) throw err;
             callBack(err, result)
